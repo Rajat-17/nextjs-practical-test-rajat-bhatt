@@ -3,7 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 // Path to the cart file
-const cartFilePath = path.join(process.cwd(), 'src', 'fake-db', 'cart.json');
+// const cartFilePath = path.join(process.cwd(), 'src', 'fake-db', 'cart.json');
+const cartFilePath = path.join(process.cwd(), '../fake-db/cart.json');
 
 // Function to read the cart data from the JSON file
 export const readCartData = () => {
