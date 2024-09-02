@@ -51,8 +51,8 @@ const Dashboard = () => {
                 <div className="container mx-auto flex flex-col items-center justify-center">
                     <h2 className="text-3xl font-bold mb-4">Our Story</h2>
                     <p className="text-lg">
-                        Our restaurant was founded on the principles of quality, service, and community. We believe that food has the power to bring people together and create lasting memories.
-                        That's why we're committed to providing the best dining experience possible.
+                        {`Our restaurant was founded on the principles of quality, service, and community. We believe that food has the power to bring people together and create lasting memories.
+                        That's why we're committed to providing the best dining experience possible.`}
                     </p>
                 </div>
             </section>
@@ -61,15 +61,15 @@ const Dashboard = () => {
                 <div className="container mx-auto flex flex-wrap justify-center">
                     <div className="w-full md:w-1/2 xl:w-1/3 p-6">
                         <h2 className="text-3xl font-bold mb-4">Awards and Recognition</h2>
-                        <p className="text-lg">We're proud to have received numerous awards and recognition for our exceptional service and culinary expertise.</p>
+                        <p className="text-lg">{`We're proud to have received numerous awards and recognition for our exceptional service and culinary expertise.`}</p>
                     </div>
                     <div className="w-full md:w-1/2 xl:w-1/3 p-6">
                         <h2 className="text-3xl font-bold mb-4">Community Involvement</h2>
-                        <p className="text-lg">We're committed to giving back to our community through various initiatives and charitable events.</p>
+                        <p className="text-lg">{`We're committed to giving back to our community through various initiatives and charitable events.`}</p>
                     </div>
                     <div className="w-full md:w-1/2 xl:w-1/3 p-6">
                         <h2 className="text-3xl font-bold mb-4">Testimonials</h2>
-                        <p className="text-lg">Don't just take our word for it! Hear what our satisfied customers have to say about their dining experience.</p>
+                        <p className="text-lg">{`Don't just take our word for it! Hear what our satisfied customers have to say about their dining experience.`}</p>
                     </div>
                 </div>
             </section>
