@@ -1,21 +1,38 @@
-'use server';
-import fs from 'fs';
-import path from 'path';
+// 'use server';
+// import fs from 'fs';
+// import path from 'path';
 
-// Path to the cart file
-const cartFilePath = path.join(process.cwd(), 'src', 'fake-db', 'cart.json');
+// const cartFilePath = path.join(process.cwd(), 'src', 'fake-db', 'cart.json');
 
-// Function to read the cart data from the JSON file
-export const readCartData = () => {
-    console.log("===== readCartData ===== ", cartFilePath)
-    const fileData = fs.readFileSync(cartFilePath, 'utf8');
-    console.log("===== fileData ===== ", fileData)
-    // Parse the JSON string
-    return JSON.parse(fileData);
+// export const readCartDataInFile = () => {
+//     const fileData = fs.readFileSync(cartFilePath, 'utf8');
+//     return JSON.parse(fileData);
+// };
+
+// export const writeCartDataInFile = (data: any) => {
+//     const content = JSON.stringify(data, null, 2);
+//     fs.writeFileSync(cartFilePath, content, 'utf8');
+// };
+
+interface CartItem {
+    id: string;
+    menuId: string;
+    name: string;
+    img: string;
+    price: number;
+    quantity: number;
+}
+
+export const readCartData = async (): Promise<CartItem[]> => {
+    if (typeof window !== "undefined") {  // Check if window is defined
+        const data = sessionStorage.getItem('cart');
+        return data ? JSON.parse(data) : [];
+    }
+    return [];
 };
 
-// Function to write the updated cart data back to the JSON file
-export const writeCartData = (data: any) => {
-    const content = JSON.stringify(data, null, 2);
-    fs.writeFileSync(cartFilePath, content, 'utf8');
+export const writeCartData = async (cartData: CartItem[]) => {
+    if (typeof window !== "undefined") {  // Check if window is defined
+        sessionStorage.setItem('cart', JSON.stringify(cartData));
+    }
 };
